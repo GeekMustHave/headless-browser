@@ -1,5 +1,6 @@
 = Headless Browser experiments
 John Schuster <John.schuster@mindspring.com>
+V2.1d,04/04/2018:Research Notes
 :Author: John HR Schuster
 :Company: GeekMustHave
 :toc: left
@@ -17,6 +18,10 @@ but are executed via a command-line interface or using network communication.
 I plan to use the headless browser for the Camunda project.
 
 This project is sourced in `~\Dropbox\MyDev\Headless\Browser`
+
+The HTML version of this document is at https://geekmusthave.com/Courses/Headless-Browser/readme.html
+
+The PDF version of this document is at https://geekmusthave.com/Courses/Headless-Browser/readme.pdf
 
 == Bootstrap
 
