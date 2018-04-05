@@ -11,5 +11,9 @@
   "license": "ISC",
   "dependencies": {
     "puppeteer": "^1.2.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.2",
+    "grunt-asciidoctor": "^0.2.1"
   }
 }
