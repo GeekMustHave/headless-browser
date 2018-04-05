@@ -86,7 +86,7 @@ image::npmstart.gif[Run]
 
 The Node app will create a file `example.png` which in this case looks like.
 
-
+image::example.png[GeekMustHave]
 
 == GIT / GITHub 
 
