@@ -510,13 +510,16 @@ using require('whatever'), then install it locally, at the root of your project.
 <li>
 <p>If you’re installing something that you want to use in your shell,
 on the command line or something, install it globally, so that its binaries end up in your PATH environment variable.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>I went with Option 1.</p>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>npm install puppeteer</pre>
 </div>
-</div>
-</li>
-</ol>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -529,6 +532,18 @@ When you install Puppeteer,
 it downloads a recent version of Chromium
 (~170Mb Mac, ~282Mb Linux, ~280Mb Win)
 that is guaranteed to work with the API. To skip the download
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+Remember to add <code>node_modules</code> to the <code>.gitignore</code> file!!
 </td>
 </tr>
 </table>
@@ -723,7 +738,7 @@ file is used as the documentation for the repository.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-04-04 22:14:10 Eastern Daylight Time
+Last updated 2018-04-04 22:17:32 Eastern Daylight Time
 </div>
 </div>
 </body>

@@ -43,12 +43,16 @@ using require('whatever'), then install it locally, at the root of your project.
 . If you’re installing something that you want to use in your shell, 
 on the command line or something, install it globally, so that its binaries end up in your PATH environment variable.  
 
+I went with Option 1.
+
    npm install puppeteer
 
 NOTE:  When you install Puppeteer, 
 it downloads a recent version of Chromium 
 (~170Mb Mac, ~282Mb Linux, ~280Mb Win) 
 that is guaranteed to work with the API. To skip the download   
+
+CAUTION: Remember to add `node_modules` to the `.gitignore` file!!
 
 This added the following to the `package.json` file.
 
