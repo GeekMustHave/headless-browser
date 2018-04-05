@@ -16,6 +16,8 @@ but are executed via a command-line interface or using network communication.
 
 I plan to use the headless browser for the Camunda project.
 
+This project is sourced in `~\Dropbox\MyDev\Headless\Browser`
+
 == Bootstrap
 
 There are quite a few headless browser opyions.
@@ -28,8 +30,7 @@ It can also be configured to use full (non-headless) Chrome or Chromium.
 
 === Node Initilazion
 
-I not certain if this step  is really needed.
-But, I've done it with all the other projects.
+This creates a Node `package.json` file used to configure the project.
 
   npm Init 
 
@@ -49,7 +50,7 @@ it downloads a recent version of Chromium
 (~170Mb Mac, ~282Mb Linux, ~280Mb Win) 
 that is guaranteed to work with the API. To skip the download   
 
-This added the following to the package.json filre.
+This added the following to the `package.json` file.
 
 ----
   "dependencies": {
@@ -69,6 +70,8 @@ include::example.js[Code]
 ----
 
 When this code is run there will be a pause just after the browser object is created.
+
+The image below will not display in the PDF version of the documnet.
 
 image::npmstart.gif[Run]
 
