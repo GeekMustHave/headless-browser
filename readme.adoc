@@ -164,6 +164,8 @@ PS F:\users\jschust2\Dropbox\myDev\HeadlessBrowser>
 Now the GitHub will be loaded with the project and the `readme.adoc` 
 file is used as the documentation for the repository.
 
+image::readmeadoc.png[Documentation]
+
 
 
 

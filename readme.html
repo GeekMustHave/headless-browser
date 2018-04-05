@@ -441,7 +441,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_node_initilazion">Node Initilazion</a></li>
 <li><a href="#_install_puppeteer">Install puppeteer</a></li>
+</ul>
+</li>
 <li><a href="#_example_code">Example code</a></li>
+<li><a href="#_git_github">GIT / GITHub</a>
+<ul class="sectlevel2">
+<li><a href="#_gitignore_file">.gitignore file</a></li>
+<li><a href="#_create_local_git">Create local GIT</a></li>
+<li><a href="#_create_remote_github">Create remote GitHub</a></li>
+<li><a href="#_sync_local_to_remote">Sync local to remote</a></li>
 </ul>
 </li>
 </ul>
@@ -534,8 +542,11 @@ that is guaranteed to work with the API. To skip the download
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_example_code">Example code</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_example_code">Example code</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The example code is based on the web site example.com.
 The example code uses ES6 syntax.</p>
@@ -575,13 +586,139 @@ const puppeteer = require('puppeteer');
 <img src="./images/npmstart.gif" alt="Run">
 </div>
 </div>
+<div class="paragraph">
+<p>The Node app will create a file <code>example.png</code> which in this case looks like.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_git_github">GIT / GITHub</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I&#8217;m GitHub&#8217;ing everything.</p>
+</div>
+<div class="sect2">
+<h3 id="_gitignore_file">.gitignore file</h3>
+<div class="paragraph">
+<p>Create this file before you GIT anything.</p>
+</div>
+<div class="listingblock">
+<div class="title"><code>.gitignore</code> example for this project</div>
+<div class="content">
+<pre>node_modules <i class="conum" data-value="1"></i><b>(1)</b>
+.gitignore</pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>You dont need to the <code>node_modeles</code> libraries you can recreate</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_create_local_git">Create local GIT</h3>
+<div class="paragraph">
+<p>Create GIT repository, add everything (except whats named in the <code>.gitignore</code> file), commit it.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>git init
+git add .
+git commit -mFirst-One</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Results are</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">PS F:\users\jschust2\Dropbox\myDev\HeadlessBrowser&gt; git init
+Initialized empty Git repository in F:/users/jschust2/Dropbox/myDev/HeadlessBrowser/.git/
+PS F:\users\jschust2\Dropbox\myDev\HeadlessBrowser&gt; git add .
+warning: LF will be replaced by CRLF in package-lock.json.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in package.json.
+The file will have its original line endings in your working directory.
+PS F:\users\jschust2\Dropbox\myDev\HeadlessBrowser&gt;
+PS F:\users\jschust2\Dropbox\myDev\HeadlessBrowser&gt; git commit -mFirst-one
+[master (root-commit) d327034] First-one
+ 7 files changed, 1045 insertions(+)
+ create mode 100644 example.js
+ create mode 100644 example.png
+ create mode 100644 images/npmstart.gif
+ create mode 100644 package-lock.json
+ create mode 100644 package.json
+ create mode 100644 readme.adoc
+ create mode 100644 readme.html
+PS F:\users\jschust2\Dropbox\myDev\HeadlessBrowser&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_create_remote_github">Create remote GitHub</h3>
+<div class="paragraph">
+<p>Create a new repository on GitHub.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/github.png" alt="Remote">
+</div>
+</div>
+<div class="paragraph">
+<p>Github will give you the commands to sync the local Git to the remote Git.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/gitremote.png" alt="Transfer">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sync_local_to_remote">Sync local to remote</h3>
+<div class="listingblock">
+<div class="content">
+<pre>git remote add origin https://github.com/GeekMustHave/headless-browser.git
+git push -u origin master</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Which results in</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-powershell" data-lang="powershell">PS F:\users\jschust2\Dropbox\myDev\HeadlessBrowser&gt; git remote add origin https://github.com/GeekMustHave/headless-browser.git
+PS F:\users\jschust2\Dropbox\myDev\HeadlessBrowser&gt; git push -u origin master
+Counting objects: 10, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (10/10), 2.72 MiB | 1.05 MiB/s, done.
+Total 10 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/GeekMustHave/headless-browser.git
+ * [new branch]      master -&gt; master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+PS F:\users\jschust2\Dropbox\myDev\HeadlessBrowser&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now the GitHub will be loaded with the project and the <code>readme.adoc</code>
+file is used as the documentation for the repository.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/readmeadoc.png" alt="Documentation">
+</div>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-04-04 21:37:18 Eastern Daylight Time
+Last updated 2018-04-04 22:07:23 Eastern Daylight Time
 </div>
 </div>
 </body>
