@@ -65,7 +65,7 @@ This added the following to the `package.json` file.
 
 == Example code 
 
-The example code is based on the web site example.com.
+The example code is based on the web site `GeekMustHave.com`, best website on the planet.
 The example code uses ES6 syntax.
 
 [source,javascript]
