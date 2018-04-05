@@ -597,7 +597,7 @@ const puppeteer = require('puppeteer');
   await page.goto('https://GeekMustHave.com');
   console.log("-- Load example.com");
   //  --- Now do a screen shot of the imagined page
-  await page.screenshot({path: 'example.png'});
+  await page.screenshot({path: './images/example.png'});
   console.log("-- Snap a PNG of the web page");
   await browser.close();
   console.log("-- Close the browser out")
