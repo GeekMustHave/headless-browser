@@ -1,0 +1,114 @@
+= Headless Browser experiments
+John Schuster <John.schuster@mindspring.com>
+:Author: John HR Schuster
+:Company: GeekMustHave
+:toc: left
+:toclevels: 4:
+:imagesdir: ./images
+:pagenums:
+:experimental:
+:source-hightlighter: pygments
+:icons: font
+
+A headless browser is a web browser without a graphical user interface.
+Headless browsers provide automated control of a web page in an environment similar to popular web browsers, 
+but are executed via a command-line interface or using network communication.
+
+I plan to use the headless browser for the Camunda project.
+
+== Bootstrap
+
+There are quite a few headless browser opyions.
+After some research I have selected the `puppeteer` package.
+
+Reference: https://github.com/GoogleChrome/puppeteer
+
+Puppeteer is a Node library which provides a high-level API to control headless Chrome or Chromium over the DevTools Protocol. 
+It can also be configured to use full (non-headless) Chrome or Chromium.
+
+=== Node Initilazion
+
+I not certain if this step  is really needed.
+But, I've done it with all the other projects.
+
+  npm Init 
+
+=== Install puppeteer  
+
+In general, the rule of thumb is:
+
+. If you’re installing something that you want to use in your program, 
+using require('whatever'), then install it locally, at the root of your project.
+. If you’re installing something that you want to use in your shell, 
+on the command line or something, install it globally, so that its binaries end up in your PATH environment variable.  
+
+   npm install puppeteer
+
+NOTE:  When you install Puppeteer, 
+it downloads a recent version of Chromium 
+(~170Mb Mac, ~282Mb Linux, ~280Mb Win) 
+that is guaranteed to work with the API. To skip the download   
+
+This added the following to the package.json filre.
+
+----
+  "dependencies": {
+    "puppeteer": "^1.2.0"
+  }
+
+----
+
+== Example code 
+
+The example code is based on the web site example.com.
+The example code uses ES6 syntax.
+
+[source,javascript]
+----
+// --- Sample code from https://github.com/GoogleChrome/puppeteer
+//     const and async and await are all advanced Node functions
+
+const puppeteer = require('puppeteer');
+
+(async () => {
+  // --- open a browser object, wait until it's open before next statement  
+  const browser = await puppeteer.launch();
+  console.log("-- browser object created.");
+  // --- open a new blank browser page, you don't actually see a page. wait tills its open  
+  //     before proceeding
+  const page = await browser.newPage();
+  console.log("-- Open a new blank page")
+  // --- Open up the GeekMustHave web page, await until it's loaded before next command
+  //     again you will not see any actual page, just imagine it's there
+  await page.goto('https://GeekMustHave.com');
+  console.log("-- Load example.com");
+  //  --- Now do a screen shot of the imagined page
+  await page.screenshot({path: 'example.png'});
+  console.log("-- Snap a PNG of the web page");
+  await browser.close();
+  console.log("-- Close the browser out")
+})();
+
+----
+
+When this code is run there will be a pause just after the browser object is created.
+
+image::npmstart.gif[Run]
+
+== GIT / GITHub 
+
+I'm GitHub'ing everything.
+
+=== .gitignore
+
+Create this file before you GIT anything.
+
+.\.gitignore example for this project
+----
+node_modules <1>
+.gitignore
+----
+<1> You dont need to GIT libraries you can recreate
+
+
+
