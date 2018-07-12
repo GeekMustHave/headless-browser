@@ -91,12 +91,14 @@ image::example.png[GeekMustHave]
 == GIT / GITHub 
 
 I'm GitHub'ing everything.
+This may seem like overkill here but, I'm trying to get a process for any development.
+This will help in future projects.
 
 === .gitignore file
 
 Create this file before you GIT anything.
 
-.`.gitignore` example for this project
+.`.gitignore` file example for this project
 ----
 node_modules <1>
 .gitignore
@@ -108,6 +110,8 @@ node_modules <1>
 
 Create GIT repository, add everything (except whats named in the `.gitignore` file), commit it.
 
+.GIT initilization commands
+[source,powershell]
 ----
 git init
 git add .
@@ -116,6 +120,7 @@ git commit -mFirst-One
 
 Results are 
 
+.GIT initilization results
 [source,powershell]
 ----
 PS F:\users\jschust2\Dropbox\myDev\HeadlessBrowser> git init
@@ -151,12 +156,17 @@ image::gitremote.png[Transfer]
 
 === Sync local to remote
 
+
+.GIT remote setup
+[source,javascript]
 ----
 git remote add origin https://github.com/GeekMustHave/headless-browser.git
 git push -u origin master
 ----
 
 Which results in 
+
+.GIT initial setup
 [source,powershell]
 ----
 PS F:\users\jschust2\Dropbox\myDev\HeadlessBrowser> git remote add origin https://github.com/GeekMustHave/headless-browser.git
@@ -179,6 +189,12 @@ file is used as the documentation for the repository.
 image::readmeadoc.png[Documentation]
 
 == Grunt 
+
+This is also overkill for a small project.
+Grunt is a task runner that can reduce development to deployment efforts.
+
+In some documentation projects I have a `GenDoc.PS1` Powershell file to manage the toolchain  for publishing.
+I'm thinking Grunt may serve as a better tool for this.
 
 [quanta]
 What is Grunt?::
@@ -207,34 +223,40 @@ Note that installing grunt-cli does not install the Grunt task runner!
 The job of the Grunt CLI is simple: run the version of Grunt which has been installed next to a Gruntfile. 
 This allows multiple versions of Grunt to be installed on the same machine simultaneously.
 
+.Install the GRUNT CLI
+[source,powershell]
 ----
 npm install -g grunt-cli
 ----
 
 ==== Enable Grunt in a Node app
 
-`package.json': This file is used by npm to store metadata for projects 
+`package.json`: This file is used by npm to store metadata for projects 
 published as npm modules.
  You will list grunt and the Grunt plugins your project needs as 
  `devDependencies`` in this file.
 
-`Gruntfile`: This file is named Gruntfile.js and is used to configure or 
-define tasks and load Grunt plugins. W
-hen this documentation mentions a Gruntfile it is talking about a file, 
+`gruntfile`: This file is named `gruntfile.js`  and is used to configure or 
+define tasks and load Grunt plugins. 
+When this documentation mentions a Gruntfile it is talking about a file, 
 which is a `Gruntfile.js`.
 
 The easiest way to add Grunt and gruntplugins to an existing `package.json`
- is with the command npm install grunt --save-dev. 
- Not only will this install 'grunt' locally, 
- but it will automatically be added to the devDependencies section, 
- using a tilde version range.
+is with the command `npm install grunt --save-dev`. 
+Not only will this install `grunt`` locally, 
+but it will automatically be added to the `devDependencies` section, 
+using a tilde version range.
  
+.Command to install Grunt in app.
+[source,powershell]
 ----
 npm install grunt --save-dev
 ----
 
 After this the `package.json` file will have a new section.
 
+.package.json file (devolper dependencies)
+[source,javascript]
 ----
   "devDependencies": {
     "grunt": "^1.0.2"
@@ -246,6 +268,8 @@ After this the `package.json` file will have a new section.
 Every Gruntfile (and gruntplugin) uses this basic format, 
 and all of your Grunt code must be specified inside this function:
 
+.module wrapper
+[source,javascript]
 ----
 module.exports = function(grunt) {
   // Do grunt-related things in here
@@ -288,13 +312,15 @@ This is quite a bit of work if you have never done it before.
 A Grunt plugin that uses Asciidoctor via Asciidoctor.js to process AsciiDoc 
 source files within the project.  These files have the `*.ADOC` extension.
 
-Install the Grunt File plugin.
+.Install Grunt ASCIIdoctor plug-n
 [source,powershell]
 ----
 npm install grunt-asciidoctor --save-dev
 ----
 
 Now the `package.json` files dev dependancies section looks like
+
+.package.json (Deloper Dependencies Section)
 [source,javascript]
 ----
 
